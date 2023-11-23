@@ -1,2 +1,2 @@
 # PokemonReviewApp
- a personal project of pakemon review api
+ pakemon review api 
