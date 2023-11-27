@@ -5,7 +5,7 @@ namespace PokemonReviewApp.Data
 {
     public class DataContext : DbContext
     {
-        //base: base is going to shove all of data thats going to be received from the outside class up into the db context
+        //base: base is going to shove all of data thats going to be received from the outside class up into the db context,
         // so, just think of it is as like you are pushing your data up into your db context inherit where you're inheriting and its going to shove all of that into entity framework core.
         public DataContext(DbContextOptions<DataContext> options) : base(options)
 
