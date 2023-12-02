@@ -66,6 +66,7 @@ namespace PokemonReviewApp.Controllers
 
         }
 
+        //Create Category
         [HttpPost]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
