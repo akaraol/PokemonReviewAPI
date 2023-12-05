@@ -15,6 +15,13 @@ namespace PokemonReviewApp.Repository
             _context = context;
             _mapper = mapper;
         }
+
+        public bool CreateReview(Review review)
+        {
+            _context.Add(review);
+            return Save();
+        }
+
         public Review GetReview(int reviewId)
         {
             return _context.Reviews.Where(r => r.Id == reviewId).FirstOrDefault();
@@ -33,6 +40,17 @@ namespace PokemonReviewApp.Repository
         public bool ReviewExists(int reviewId)
         {
             return _context.Reviews.Any(r => r.Id == reviewId);
+        }
+
+        /*
+         * Note: The method checks whether the value stored in saved is greater than 0.
+         * If it is, the method returns true, indicating that there were changes and they were successfully saved. 
+         * If saved is not greater than 0, it returns false, indicating that there were no changes to save.
+         */
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
         }
     }
 }
