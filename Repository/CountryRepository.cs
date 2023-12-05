@@ -54,5 +54,11 @@ namespace PokemonReviewApp.Repository
             // that means, if saved >= 0 true, else false.
             return saved > 0 ? true : false;
         }
+
+        public bool UpdateCountry(Country country)
+        {
+            _context.Update(country);
+            return Save();
+        }
     }
 }
