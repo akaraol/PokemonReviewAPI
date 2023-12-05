@@ -40,6 +40,12 @@ namespace PokemonReviewApp.Repository
             return Save();
         }
 
+        public bool DeletePokemon(Pokemon pokemon)
+        {
+            _context.Remove(pokemon);
+            return Save();
+        }
+
         public Pokemon GetPokemon(int id)
         {
             //Where clause is like filtering in SQL. It is going into our Pokemon entity and it is going to search Id column that we built in our entity framework context
